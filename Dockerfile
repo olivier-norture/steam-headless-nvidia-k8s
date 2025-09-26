@@ -18,14 +18,19 @@ RUN apt-get update && apt-get install -y wget gnupg ca-certificates && \
 # Install required NVIDIA libraries for OpenGL and X
 RUN apt-get install -y \
     libnvidia-gl-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
+    libnvidia-gl-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
     nvidia-utils-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     libnvidia-compute-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
+    libnvidia-compute-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
     libnvidia-cfg1-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     libnvidia-decode-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
+    libnvidia-decode-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
     xserver-xorg-video-nvidia-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     nvidia-persistenced${NVIDIA_VERSION_EXTENDED} \
     libnvidia-encode-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
+    libnvidia-encode-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
     libnvidia-fbc1-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
+    libnvidia-fbc1-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED}
     nvidia-xconfig && \
     apt-mark hold libnvidia-gl-${NVIDIA_VERSION} nvidia-utils-${NVIDIA_VERSION} libnvidia-compute-${NVIDIA_VERSION} \
                   libnvidia-cfg1-${NVIDIA_VERSION} libnvidia-decode-${NVIDIA_VERSION} \
