@@ -1,7 +1,10 @@
-name: Publish Docker image
+name: Docker Build
 
 on:
   push:
+    branches:
+      - "main"
+  pull_request:
     branches:
       - "main"
 
@@ -36,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          push: true
+          push: ${{ github.event_name == 'push' }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/steam-headless-nvidia-k8s:${{ steps.date.outputs.date }}-${{ steps.nvidia_version.outputs.version }}
             ghcr.io/${{ github.repository_owner }}/steam-headless-nvidia-k8s:latest
