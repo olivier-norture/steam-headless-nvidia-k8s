@@ -26,7 +26,7 @@ RUN apt-get install -y \
     libnvidia-decode-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     libnvidia-decode-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
     xserver-xorg-video-nvidia-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
-    xserver-xorg-utils \
+    x11-xserver-utils \
     nvidia-persistenced${NVIDIA_VERSION_EXTENDED} \
     libnvidia-encode-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     libnvidia-encode-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
