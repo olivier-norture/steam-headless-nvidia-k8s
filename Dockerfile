@@ -26,6 +26,7 @@ RUN apt-get install -y \
     libnvidia-decode-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     libnvidia-decode-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
     xserver-xorg-video-nvidia-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
+    xserver-xorg-utils \
     nvidia-persistenced${NVIDIA_VERSION_EXTENDED} \
     libnvidia-encode-${NVIDIA_VERSION}${NVIDIA_VERSION_EXTENDED} \
     libnvidia-encode-${NVIDIA_VERSION}:i386${NVIDIA_VERSION_EXTENDED} \
@@ -41,3 +42,4 @@ RUN nvidia-xconfig --preserve-busid --enable-all-gpus
 RUN rm -f /etc/cont-init.d/60-configure_gpu_driver.sh
 
 COPY overlay/etc/cont-init.d/* /etc/cont-init.d/
+COPY overlay/usr/local/bin/* /usr/local/bin/
